@@ -49,6 +49,7 @@ class Home extends Component {
           <SearchBox 
             search = {this.filterBooks}
             reset = {this.reset}
+            bookList = {this.state.books}
           />
         </section>
         <section className='displayBox'>

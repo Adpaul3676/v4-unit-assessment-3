@@ -6,6 +6,7 @@
   height: 75px;
   background-color: white;
   margin: 0px;
+  box-shadow: transparent;
   -webkit-box-shadow: 2px 0px 7px 4px #ccc;
 }
 

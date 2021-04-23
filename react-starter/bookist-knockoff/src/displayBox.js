@@ -5,14 +5,14 @@ class DisplayBox extends Component {
     super (props)
     this.state = {
       bookList: this.props.bookList,
-      shelvedBooks: ''
+      shelvedBooks: '',
     }
     this.shelf = this.shelf.bind(this)
     this.clearShelf = this.clearShelf.bind(this)
-//     let shelvedShow = this.state.shelvedBooks.map((book) =>
-//   <li>{book}</li>
-// );
+    // this.state.mapped = this.state.mapped.bind(this)
   }
+
+  
 
   shelf (input) {
     if (this.state.shelvedBooks === []) {
@@ -30,17 +30,21 @@ class DisplayBox extends Component {
     this.setState ({shelvedBooks: []})
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({ bookList: nextProps});  
+  // }
+
   render () {
     return (
       <section className='bigDisplay'>
         <section className='bookBox'>{this.state.bookList.map((element, index) => {
-          return (
-            <button className='bookView' onClick={() => this.shelf(element.title)}>
-              <img className='imageFormat' src={element.img}></img>
-              <div >{`${element.title} by ${element.author}`}</div>
-            </button>
-          );
-        })}
+        return (
+          <button className='bookView' onClick={() => this.shelf(element.title)}>
+            <img className='imageFormat' src={element.img}></img>
+            <div>{`${element.title} by ${element.author}`}</div>
+          </button>
+        );
+      })}
         </section>
         <div className='dividerLine'></div>
         <section className='bookShelf'>
